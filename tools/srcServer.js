@@ -9,6 +9,7 @@ import open from 'open';
 const port = 3000;
 const app = express();
 const compiler = webpack(config);
+const url = require('url')
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
@@ -18,6 +19,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function(req, res) {
+  get(req, res);
   res.sendFile(path.join( __dirname, '../src/index.html'));
 });
 
@@ -28,3 +30,18 @@ app.listen(port, function(err) {
     open(`http://localhost:${port}`);
   }
 });
+
+
+function get(req, res){
+  const u = url.parse(req.url);
+  switch (u.pathname) {
+    case '/login':
+      break;
+    case '/register':
+      console.log(u);
+      res.set('state', 'success');
+      break;
+    default:
+
+  }
+}
