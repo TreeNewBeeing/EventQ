@@ -31,6 +31,9 @@ class Login extends React.Component{
 //     e.preventDefault();
 //     this.props.login(username,password);
 //   }
+  login(){
+      
+  }
 
   render(){
     // if(this.props.verification === undefined){
@@ -71,7 +74,7 @@ class Login extends React.Component{
               </div>
 
               <div className="input-group">
-                <Link to={this.state.routeAddress} type="submit" className="btn" onClick={this.validateLogin} id="submitBtn" name="login_btn">LOG IN</Link>
+                <button type="button" className="btn" onClick={this.login} id="submitBtn" name="login_btn">LOG IN</Link>
               </div>
               <p>
                 Not yet a member? <Link to="/register">Sign up</Link>

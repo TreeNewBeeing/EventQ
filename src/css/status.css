@@ -1,0 +1,25 @@
+
+@keyframes rotate{
+    0%{
+        transform: rotate(-10deg);
+    }
+    15%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    65%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+.Event{
+    /* animation-name: rotate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 0.1s; */
+}

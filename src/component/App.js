@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Status from './Status';
+import Menu from './Menu';
 // import Home from './Home';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
@@ -12,6 +13,9 @@ class App extends React.Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      display: 'gallery',
+    }
     // // Initial state
     // this.state = {
     //   route:"",
@@ -50,6 +54,11 @@ class App extends React.Component{
 //     // console.log("home reset");
 //   }
 
+  changeDisplay(mode){
+
+    this.setState(Object.assign(this.state, {display: mode}));
+    console.log(this.state);
+  }
   render(){
     // if(this.props.verification !== true && localStorage["username"]==undefined){
     // // if(localStorage["username"]==undefined){
@@ -58,9 +67,10 @@ class App extends React.Component{
     // }
     return (
       <div>
-        <Header pageName="" resetEverything={this.resetEverything}/>
-        <Status/>
-        <Footer />
+        {/* <Header pageName="" resetEverything={this.resetEverything}/> */}
+        <Menu changeDisplay={this.changeDisplay.bind(this)}/>
+        <Status display={this.state.display}/>
+        {/* <Footer /> */}
       </div>
     );
   }

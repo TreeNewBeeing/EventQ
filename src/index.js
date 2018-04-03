@@ -10,6 +10,7 @@ import {Router, browserHistory} from 'react-router';
 import route from './Route';
 import './css/style.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { setInterval } from 'timers';
 
 
 // const store = createStore(rootReducer, applyMiddleware(thunk));
